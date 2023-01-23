@@ -1,0 +1,41 @@
+table {
+    background-color: white;
+    width: 100%;
+    margin: 1rem 0;
+    
+    text-align: center;
+    border-collapse: collapse;
+}
+
+th {
+    background-color: #1F5EAF;
+    color: white;
+    font-weight: bolder;
+}
+
+th, td{
+    border: 1px solid rgb(0, 0, 0);
+    padding: .3rem;
+}
+
+.abaixo-peso {
+    background-color: #7FACD6;
+}
+
+.normal {
+    background-color: #7AB182;
+}
+
+.acima-peso {
+    background-color: #ECCC51;
+}
+
+.obesidade {
+    background-color: #CB7714;
+}
+
+.obesidade-grave {
+    background-color: #C22339;
+}
+
+
