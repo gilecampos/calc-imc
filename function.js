@@ -42,11 +42,11 @@ function classificarIMC () {
         mainBG.style.backgroundColor = '#7FACD6';
         mainBG.style.borderColor = '#7FACD6'
         resultado.innerHTML = `
-        <div class="resultado-imc">
-            <h1>${calcularIMC()}</h1>
-            <p>Você está abaio do peso adequado.</p>
-        </div>
-    `
+            <div class="resultado-imc">
+                <h1>${calcularIMC()}</h1>
+                <p>Você está abaio do peso adequado.</p>
+            </div>
+        `
     } else if(calcularIMC() >= 18.5 && calcularIMC() < 25) {
         mainBG.style.backgroundColor = '#7AB182'
         mainBG.style.borderColor = '#7AB182'
@@ -60,29 +60,29 @@ function classificarIMC () {
         mainBG.style.backgroundColor = '#ECCC51'
         mainBG.style.borderColor = '#ECCC51'
         resultado.innerHTML = `
-        <div class="resultado-imc">
-            <h1>${calcularIMC()}</h1>
-            <p>Você está acima do peso adequado (obesidade grau l).</p>
-        </div>
-    `
+            <div class="resultado-imc">
+                <h1>${calcularIMC()}</h1>
+                <p>Você está acima do peso adequado (obesidade grau l).</p>
+            </div>
+        `
     } else if(calcularIMC() > 30 && calcularIMC() < 40) {
         mainBG.style.backgroundColor = '#CB7714'
         mainBG.style.borderColor = '#CB7714'
         resultado.innerHTML = `
-        <div class="resultado-imc">
-            <h1>${calcularIMC()}</h1>
-            <p>Você está muito acima do peso (grau obesidade ll).</p>
-        </div>
-    `
+            <div class="resultado-imc">
+                <h1>${calcularIMC()}</h1>
+                <p>Você está muito acima do peso (grau obesidade ll).</p>
+            </div>
+        `
     } else {
         mainBG.style.backgroundColor = '#C22339'
         mainBG.style.borderColor = '#C22339'
         resultado.innerHTML = `
-        <div class="resultado-imc">
-            <h1>${calcularIMC()}</h1>
-            <p>Você está muito acima do peso (grau obesidade lll).</p>
-        </div>
-    `
+            <div class="resultado-imc">
+                <h1>${calcularIMC()}</h1>
+                <p>Você está muito acima do peso (grau obesidade lll).</p>
+            </div>
+        `
     }
 }
 
