@@ -36,15 +36,18 @@
                             type="number"
                             name="height"
                             id="height"
+                            data-js="height"
                             placeholder="Metros"
                             required>
                     </label>
+
                     <label>
                         <h2>Peso (ex: 66,5)</h2>
                         <input
                             type="number"
                             name="weight"
                             id="weight"
+                            data-js="weight"
                             placeholder="Quilos"
                             required>
                     </label>
@@ -53,20 +56,22 @@
                 <div class="buttons">
                     <button
                         type="button"
-                        id="calculateBtn">
+                        data-js="calculateBtn"
+                        class="calculateBtn">
                         CALCULAR
                     </button>
 
                     <button
                         type="button"
-                        id="clean">
+                        data-js="clean"
+                        class="clean">
                         LIMPAR
                     </button>
                 </div>
             </form>
         </div>
 
-        <div class="container-classificacao">
+        <div class="container-classify">
             <hr><h2>TABELA IMC</h2><hr>
             <table>
                 <thead>
@@ -111,7 +116,7 @@
 
             <h2>Seu IMC</h2><hr>
             
-            <div id="you-imc">
+            <div class="container-result-imc" data-js="container-result-imc">
                 <!-- <div class="resultado-imc">
                     <h1>25.0</h1>
                     <p>Você está dentro do peso adequado</p>

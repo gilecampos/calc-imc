@@ -143,21 +143,21 @@ form .buttons button{
     cursor: pointer;
 }
 
-form .buttons #calculateBtn {
+form .buttons .calculateBtn {
     background-color: #114fa0;
     
 }
 
-form .buttons #calculateBtn:hover {
+form .buttons .calculateBtn:hover {
     background-color: #04316d;
     transition: .5s ease;
 }
 
-form .buttons #clean {
+form .buttons .clean {
     background-color: #ee5813;
 }
 
-form .buttons #clean:hover {
+form .buttons .clean:hover {
     background-color: #d14504;
     transition: .5s ease;
 }
@@ -203,12 +203,12 @@ form .buttons #clean:hover {
     text-align: center;
 }
 
-#seu-imc a {
+.container-result-imc a {
     color: blue;
     font-weight: bolder;
 }
 
-#seu-imc a:hover {
+.container-result-imc a:hover {
     color: rgba(0, 0, 255, 0.672);
 }
 
