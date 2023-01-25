@@ -190,7 +190,7 @@ form .buttons #clean:hover {
     justify-content: center;
     align-items: center;
 
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 .resultado-imc h1 {
@@ -200,6 +200,7 @@ form .buttons #clean:hover {
 
 .resultado-imc p {
     font-size: 1.2rem;
+    text-align: center;
 }
 
 #seu-imc a {

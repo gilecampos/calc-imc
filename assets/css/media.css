@@ -1,0 +1,12 @@
+@media (max-width: 768px) {
+    main {
+        width: 97%;
+    }
+    table {
+        font-size: .925rem;
+    }
+
+    th, td {
+        padding: .2rem;
+    }
+}
