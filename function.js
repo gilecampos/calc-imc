@@ -1,114 +1,125 @@
-const weight = document.querySelector('#weight');
-const height = document.querySelector('#height');
-const calculate = document.querySelector('#calculate');
-const clean = document.querySelector('#clean');
-const resultado = document.querySelector('#seu-imc');
+const inputWeight = document.querySelector('#weight');
+const inputHeight = document.querySelector('#height');
+const calculateButton = document.querySelector('#calculateBtn');
+const clearInputValueBtn = document.querySelector('#clean');
+const result = document.querySelector('#you-imc');
 
 
-let pesoValido = true;
-let alturaValida = true;
+let validWeight = true;
+let validHeight = true;
 
 
 // VALIDANDO DADOS DE ENTRADA (ALTURA E PESO).
-function validarEntrada() {
-    if(weight.value <= 0 || weight.value > 400) {
-        pesoValido = false;
+function dataValidate() {
+    if(inputWeight.value <= 0 || inputWeight.value > 400) {
+        validWeight = false;
     } else {
-        pesoValido = true;
+        validWeight = true;
     }
 
-    if(height.value <= 0 || height.value >= 3) {
-        alturaValida = false;
+    if(inputHeight.value <= 0 || inputHeight.value >= 3) {
+        validHeight = false;
     } else {
-        alturaValida = true;
+        validHeight = true;
     }
 }
 
 // CALCULANDO O IMC
-function calcularIMC() {
-    const imc = weight.value / (height.value * height.value);
+function calcIMC() {
+    const imc = inputWeight.value / (inputHeight.value * inputHeight.value);
     return imc.toFixed(2);
 }
 
-clean.addEventListener('click', function() {
-    weight.value = '';
-    height.value = '';
-})
+// CLEAR INPUTS
+function inputClear() {
+    inputWeight.value = '';
+    inputHeight.value = '';
+};
 
 // PEGANDO O RESULTADO E ALTERANDO O BACKGROUND DE ACORDO COM O RESULTADO
-function classificarIMC () {
+function classIMC () {
     let mainBG = document.querySelector('main');
-    if(calcularIMC() < 18.5) {
+    if(calcIMC() < 18.5) {
         mainBG.style.backgroundColor = '#7FACD6';
         mainBG.style.borderColor = '#7FACD6'
-        resultado.innerHTML = `
+
+        result.innerHTML = `
             <div class="resultado-imc">
-                <h1>${calcularIMC()}</h1>
+                <h1>${calcIMC()}</h1>
                 <p>Você está abaio do peso adequado.</p>
             </div>
         `
-    } else if(calcularIMC() >= 18.5 && calcularIMC() < 25) {
+    } else if(calcIMC() >= 18.5 && calcIMC() < 25) {
         mainBG.style.backgroundColor = '#7AB182'
         mainBG.style.borderColor = '#7AB182'
-        resultado.innerHTML = `
+
+        result.innerHTML = `
             <div class="resultado-imc">
-                <h1>${calcularIMC()}</h1>
+                <h1>${calcIMC()}</h1>
                 <p>Você está dentro do peso adequado.</p>
             </div>
         `
-    } else if(calcularIMC() >= 25 && calcularIMC() < 30) {
+    } else if(calcIMC() >= 25 && calcIMC() < 30) {
         mainBG.style.backgroundColor = '#ECCC51'
         mainBG.style.borderColor = '#ECCC51'
-        resultado.innerHTML = `
+
+        result.innerHTML = `
             <div class="resultado-imc">
-                <h1>${calcularIMC()}</h1>
+                <h1>${calcIMC()}</h1>
                 <p>Você está acima do peso adequado (obesidade grau l).</p>
             </div>
         `
-    } else if(calcularIMC() > 30 && calcularIMC() < 40) {
+    } else if(calcIMC() > 30 && calcIMC() < 40) {
         mainBG.style.backgroundColor = '#CB7714'
         mainBG.style.borderColor = '#CB7714'
-        resultado.innerHTML = `
+
+        result.innerHTML = `
             <div class="resultado-imc">
-                <h1>${calcularIMC()}</h1>
+                <h1>${calcIMC()}</h1>
                 <p>Você está muito acima do peso (grau obesidade ll).</p>
             </div>
         `
     } else {
         mainBG.style.backgroundColor = '#C22339'
         mainBG.style.borderColor = '#C22339'
-        resultado.innerHTML = `
+
+        result.innerHTML = `
             <div class="resultado-imc">
-                <h1>${calcularIMC()}</h1>
+                <h1>${calcIMC()}</h1>
                 <p>Você está muito acima do peso (grau obesidade lll).</p>
             </div>
         `
     }
 }
 
-function verificandoElement() {
-    if(resultado.children.length >= 1) {
-        resultado.innerHTML = '';
+// VERIFICANDO SE CONTÈM ELEMENTO DE RESULTADO CRIADO
+function checkElement() {
+    if(result.children.length >= 1) {
+        result.innerHTML = '';
     }
 }
 
+// FAZENDO O CALCULO E EXIBINDO
+function calculateImc() {
+    dataValidate();
+    if(validHeight && validWeight) {
+        checkElement();
 
-calculate.addEventListener('click', function() {
-    validarEntrada();
-    if(alturaValida && pesoValido) {
-        verificandoElement();
         let resultadoIMC = document.createElement('h1');
-        resultadoIMC.innerHTML = calcularIMC();
-        resultado.appendChild(resultadoIMC)
-        classificarIMC()
-    }else if (alturaValida === false && pesoValido === false) {
+        resultadoIMC.innerHTML = calcIMC();
+        result.appendChild(resultadoIMC)
+
+        classIMC()
+    }else if (validHeight === false && validWeight === false) {
         alert('Ambas informações estão incorretas, digite-os novamente!')
-    }else if (pesoValido === false) {
+    }else if (validWeight === false) {
         alert('O peso informado está abaixo do limite mínimo permitido ou')
     }else {
         alert('A altura informada está incorreta, digite um valor VÁLIDO!');
     }
-})
+}
 
+calculateButton.addEventListener('click', calculateImc);
+clearInputValueBtn.addEventListener('click', inputClear);
 
 

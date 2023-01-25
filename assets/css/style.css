@@ -143,12 +143,12 @@ form .buttons button{
     cursor: pointer;
 }
 
-form .buttons #calculate {
+form .buttons #calculateBtn {
     background-color: #114fa0;
     
 }
 
-form .buttons #calculate:hover {
+form .buttons #calculateBtn:hover {
     background-color: #04316d;
     transition: .5s ease;
 }
