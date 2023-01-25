@@ -162,20 +162,20 @@ form .buttons .clean:hover {
     transition: .5s ease;
 }
 
-.container-classificacao {
+.container-classify {
     padding: 1rem;
 }
 
-.container-classificacao hr {
+.container-classify hr {
     border-color: #051014;
 }
 
-.container-classificacao h2 {
+.container-classify h2 {
     color: #051014;
     text-align: center;
 }
 
-#seu-imc {
+.container-result-imc {
     display: flex;
     flex-direction: column;
     align-items: center;
