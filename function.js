@@ -4,8 +4,8 @@ const calculateButton = document.querySelector('[data-js="calculateBtn"]');
 const clearInputButton = document.querySelector('[data-js="clean"]');
 const result = document.querySelector('[data-js="container-result-imc"]');
 
-let validWeight = true;
-let validHeight = true;
+const validWeight = true;
+const validHeight = true;
 
 // VALIDANDO DADOS DE ENTRADA (ALTURA E PESO).
 const dataValidate = () => {
@@ -34,60 +34,33 @@ const clearButton = () =>  {
     inputHeight.value = '';
 }
 
-// PEGANDO O RESULTADO E ALTERANDO O BACKGROUND DE ACORDO COM O RESULTADO
 const classifyImc = () => {
-    let mainBG = document.querySelector('main');
-    if(calculateImc() < 18.5) {
-        mainBG.style.backgroundColor = '#7FACD6';
-        mainBG.style.borderColor = '#7FACD6'
+    const mainBG = document.querySelector('main');
+    const imc = calculateImc();
 
-        result.innerHTML = `
-            <div class="resultado-imc">
-                <h1>${calculateImc()}</h1>
-                <p>Você está abaio do peso adequado.</p>
-            </div>
-        `
-    } else if(calculateImc() >= 18.5 && calculateImc() < 25) {
-        mainBG.style.backgroundColor = '#7AB182'
-        mainBG.style.borderColor = '#7AB182'
+    const ranges = [
+        { min: 0, max: 18.5, color: '#7FACD6', message: 'Você está abaixo do peso adequado.' },
+        { min: 18.5, max: 25, color: '#7AB182', message: 'Você está dentro do peso adequado.' },
+        { min: 25, max: 30, color: '#ECCC51', message: 'Você está acima do peso adequado (obesidade grau l).' },
+        { min: 30, max: 40, color: '#CB7714', message: 'Você está muito acima do peso (grau obesidade ll).' },
+        { min: 40, max: Infinity, color: '#C22339', message: 'Você está muito acima do peso (grau obesidade lll).' },
+    ];
 
-        result.innerHTML = `
-            <div class="resultado-imc">
-                <h1>${calculateImc()}</h1>
-                <p>Você está dentro do peso adequado.</p>
-            </div>
-        `
-    } else if(calculateImc() >= 25 && calculateImc() < 30) {
-        mainBG.style.backgroundColor = '#ECCC51'
-        mainBG.style.borderColor = '#ECCC51'
+    for (let range of ranges) {
+        if (imc >= range.min && imc < range.max) {
+            mainBG.style.backgroundColor = range.color;
+            mainBG.style.borderColor = range.color;
 
-        result.innerHTML = `
-            <div class="resultado-imc">
-                <h1>${calculateImc()}</h1>
-                <p>Você está acima do peso adequado (obesidade grau l).</p>
-            </div>
-        `
-    } else if(calculateImc() > 30 && calculateImc() < 40) {
-        mainBG.style.backgroundColor = '#CB7714'
-        mainBG.style.borderColor = '#CB7714'
-
-        result.innerHTML = `
-            <div class="resultado-imc">
-                <h1>${calculateImc()}</h1>
-                <p>Você está muito acima do peso (grau obesidade ll).</p>
-            </div>
-        `
-    } else {
-        mainBG.style.backgroundColor = '#C22339'
-        mainBG.style.borderColor = '#C22339'
-
-        result.innerHTML = `
-            <div class="resultado-imc">
-                <h1>${calculateImc()}</h1>
-                <p>Você está muito acima do peso (grau obesidade lll).</p>
-            </div>
-        `
+            result.innerHTML = `
+                <div class="resultado-imc">
+                    <h1>${imc}</h1>
+                    <p>${range.message}</p>
+                </div>
+            `;
+            break;
+        }
     }
+    console.log(ranges.message)
 }
 
 // VERIFICANDO SE CONTÈM ELEMENTO DE RESULTADO CRIADO
