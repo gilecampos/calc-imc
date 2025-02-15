@@ -1,132 +1,117 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora IMC</title>
-    <link rel="stylesheet" href="assets/css/class-imc.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/media.css">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Calculadora IMC</title>
+	<link rel="stylesheet" href="assets/css/class-imc.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="assets/css/media.css">
 </head>
+
 <body>
-    <main>
-        <!-- SOBRE O IMC -->
-        <div class="imc-desc">
-            <hr><h2>IMC</h2><hr>
-            <h1>Cálculo IMC</h1>
-            <p>
-                <strong>IMC</strong> é a sigla para Índice de <strong>Massa Corpórea</strong>,  parâmetro adotado pela Organização Mundial de Saúde para calcular o peso ideal de cada pessoa.
-            </p>
+	<main>
+		<!-- SOBRE O IMC -->
+		<div class="imc-desc">
+			<hr>
+			<h2>IMC</h2>
+			<hr>
+			<h1>Cálculo IMC</h1>
+			<p>
+				<strong>IMC</strong> é a sigla para Índice de <strong>Massa Corpórea</strong>, parâmetro adotado pela Organização Mundial de Saúde para calcular o peso ideal de cada pessoa.
+			</p>
 
-            <p>
-                O índice é calculado da seguinte maneira: divide-se o peso do paciente pela sua altura elevada ao quadrado. Diz-se que o indivíduo tem peso normal quando o resultado do <strong>IMC</strong> está entre 18,5 e 24,9.
-            </p>
+			<p>
+				O índice é calculado da seguinte maneira: divide-se o peso do paciente pela sua altura elevada ao quadrado. Diz-se que o indivíduo tem peso normal quando o resultado do <strong>IMC</strong> está entre 18,5 e 24,9.
+			</p>
 
-            <p>
-                Quer descobrir seu <strong>IMC</strong>? Insira seu peso e sua altura nos campos abaixo e compare com os índices da tabela. <strong>Importante</strong>: siga os exemplos e use pontos como separadores.
-            </p>
+			<p>
+				Quer descobrir seu <strong>IMC</strong>? Insira seu peso e sua altura nos campos abaixo e compare com os índices da tabela. <strong>Importante</strong>: siga os exemplos e use pontos como separadores.
+			</p>
 
-            <!-- FORM DADOS IMC -->
-            <form>
-                <div class="inputs">
-                    <label>
-                        <h2>Altura (ex: 1,80)</h2>
-                        <input
-                            type="number"
-                            name="height"
-                            id="height"
-                            data-js="height"
-                            placeholder="Metros"
-                            required>
-                    </label>
+			<!-- FORM DADOS IMC -->
+			<form>
+				<div class="inputs">
+					<label>
+						<h2>Altura (ex: 1,80)</h2>
+						<input type="number" name="height" id="height" data-js="height" placeholder="Metros" required>
+					</label>
 
-                    <label>
-                        <h2>Peso (ex: 66,5)</h2>
-                        <input
-                            type="number"
-                            name="weight"
-                            id="weight"
-                            data-js="weight"
-                            placeholder="Quilos"
-                            required>
-                    </label>
-                </div>
-            
-                <div class="buttons">
-                    <button
-                        type="button"
-                        data-js="calculateBtn"
-                        class="calculateBtn">
-                        CALCULAR
-                    </button>
+					<label>
+						<h2>Peso (ex: 66,5)</h2>
+						<input type="number" name="weight" id="weight" data-js="weight" placeholder="Quilos" required>
+					</label>
+				</div>
 
-                    <button
-                        type="button"
-                        data-js="clean"
-                        class="clean">
-                        LIMPAR
-                    </button>
-                </div>
-            </form>
-        </div>
+				<div class="buttons">
+					<button type="button" data-js="calculateBtn" class="calculateBtn">
+						CALCULAR
+					</button>
 
-        <div class="container-classify">
-            <hr><h2>TABELA IMC</h2><hr>
-            <table>
-                <thead>
-                    <tr>
-                        <th>IMC</th>
-                        <th>CLASSIFICAÇÃO</th>
-                        <th>GRAU OBESIDADE</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="abaixo-peso">Abaixo de 18.5</td>
-                        <td class="abaixo-peso">Abaixo do Peso</td>
-                        <td class="abaixo-peso">0</td>
-                    </tr>
+					<button type="button" data-js="clean" class="clean">
+						LIMPAR
+					</button>
+				</div>
+			</form>
+		</div>
 
-                    <tr>
-                        <td class="normal">Entre 18,5 e 24,9</td>
-                        <td class="normal">Normal</td>
-                        <td class="normal">0</td>
-                    </tr>
+		<div class="container-classify">
+			<hr>
+			<h2>TABELA IMC</h2>
+			<hr>
+			<table>
+				<thead>
+					<tr>
+						<th>IMC</th>
+						<th>CLASSIFICAÇÃO</th>
+						<th>GRAU OBESIDADE</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="abaixo-peso">Abaixo de 18.5</td>
+						<td class="abaixo-peso">Abaixo do Peso</td>
+						<td class="abaixo-peso">0</td>
+					</tr>
 
-                    <tr>
-                        <td class="acima-peso">Entre 25,0 e 29,9</td>
-                        <td class="acima-peso">Acima do peso</td>
-                        <td class="acima-peso">I</td>
-                    </tr>
+					<tr>
+						<td class="normal">Entre 18,5 e 24,9</td>
+						<td class="normal">Normal</td>
+						<td class="normal">0</td>
+					</tr>
 
-                    <tr>
-                        <td class="obesidade">Entre 30,0 e 39,9</td>
-                        <td class="obesidade">Obesidade</td>
-                        <td class="obesidade">II</td>
-                    </tr>
+					<tr>
+						<td class="acima-peso">Entre 25,0 e 29,9</td>
+						<td class="acima-peso">Acima do peso</td>
+						<td class="acima-peso">I</td>
+					</tr>
 
-                    <tr>
-                        <td class="obesidade-grave">Maior que 40,0</td>
-                        <td class="obesidade-grave" >Obesidade grave</td>
-                        <td class="obesidade-grave">III</td>
-                    </tr>
-                </tbody>
-            </table>
+					<tr>
+						<td class="obesidade">Entre 30,0 e 39,9</td>
+						<td class="obesidade">Obesidade</td>
+						<td class="obesidade">II</td>
+					</tr>
 
-            <h2>Seu IMC</h2><hr>
-            
-            <div class="container-result-imc" data-js="container-result-imc">
-                <!-- <div class="resultado-imc">
-                    <h1>25.0</h1>
-                    <p>Você está dentro do peso adequado</p>
-                </div>
-                 
-                <p><a href="">Clique para obter mais informações ou dicas</a></p> -->
-            </div>
-        </div>
-    </main>
-    <script src="https://kit.fontawesome.com/5b49dcbbc2.js" crossorigin="anonymous"></script>
-    <script src="function.js"></script>
+					<tr>
+						<td class="obesidade-grave">Maior que 40,0</td>
+						<td class="obesidade-grave">Obesidade grave</td>
+						<td class="obesidade-grave">III</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<h2>Seu IMC</h2>
+			<hr>
+
+			<div class="container-result-imc" data-js="container-result-imc">
+				
+			</div>
+		</div>
+	</main>
+	<script src="https://kit.fontawesome.com/5b49dcbbc2.js" crossorigin="anonymous"></script>
+	<script src="function.js"></script>
 </body>
+
 </html>
