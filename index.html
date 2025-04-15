@@ -12,44 +12,7 @@
 
 
 	<style>
-		.interpretation__table {
-			width: 100%;
-			border-collapse: collapse;
-			margin-top: 1.5rem;
-			font-family: sans-serif;
-		}
-
-		.interpretation__table th,
-		.interpretation__table td {
-			padding: 0.75rem 1rem;
-			text-align: center;
-			border: 1px solid #ccc;
-		}
-
-		.interpretation__table-row--level-low {
-			background-color: #cce5ff;
-			/* Azul claro - abaixo do peso */
-		}
-
-		.interpretation__table-row--level-healthy {
-			background-color: #d4edda;
-			/* Verde claro - saudável */
-		}
-
-		.interpretation__table-row--level-warning {
-			background-color: #fff3cd;
-			/* Amarelo - sobrepeso */
-		}
-
-		.interpretation__table-row--level-danger {
-			background-color: #f8d7da;
-			/* Vermelho claro - obesidade */
-		}
-
-		.interpretation__table-row--header {
-			background-color: #343a40;
-			color: #fff;
-		}
+		
 	</style>
 
 	<title>WealthSystem</title>
@@ -61,28 +24,31 @@
 	</header>
 
 	<main class="main-content">
-		<section class="about">
-			<h1 class="about__title">Calculadora de IMC (e peso ideal)</h1>
+		<section class="about container">
+			<h1 class="title">Calculadora de IMC (e peso ideal)</h1>
 
 			<p class="about__text">A classificação do índice de massa corporal (IMC) pode ajudar a identificar problemas de obesidade ou desnutrição, em crianças, adolescentes, adultos e idosos.</p>
 			<p class="about__text">Além de calcular o valor de IMC, esta calculadora também indica qual o intervalo de peso ideal que deve ter para garantir uma melhor qualidade de vida. Ter um peso dentro do intervalo de peso ideal ajuda ainda a evitar o aparecimento de várias doenças crônicas, como diabetes e hipertensão.</p>
 		</section>
 
-		<section class="calculator">
-			<h2 class="calculator__title">Preencha abaixo com seus dados para obter o seu IMC: </h2>
+		<section class="calculator container">
+			<h2 class="title">Preencha abaixo com seus dados para obter o seu IMC: </h2>
 
 			<div class="calculator__content">
 				<form action="#" class="calculator__form">
 					<fieldset class="calculator__fieldset">
 						<legend class="calculator__legend">Sexo</legend>
-						<label class="calculator__radio-label">
-							<input type="radio" name="gender" value="male" class="calculator__radio" required>
-							Masculino ♂️
-						</label>
-						<label class="calculator__radio-label">
-							<input type="radio" name="gender" value="female" class="calculator__radio" required>
-							Feminino ♀️
-						</label>
+						<div class="calculator__radio-group">
+							<label class="calculator__radio-label">
+								<input type="radio" name="gender" value="male" class="calculator__radio" required>
+								Masculino ♂️
+							</label>
+						
+							<label class="calculator__radio-label">
+								<input type="radio" name="gender" value="female" class="calculator__radio" required>
+								Feminino ♀️
+							</label>
+						</div>
 					</fieldset>
 
 					<div class="calculator__input-group">
@@ -109,8 +75,8 @@
 			</div>
 		</section>
 
-		<section class="interpretation">
-			<h2 class="interpretation__title">Como interpretar o resultado do seu IMC</h2>
+		<section class="interpretation container">
+			<h2 class="title">Como interpretar o resultado do seu IMC</h2>
 
 			<p class="interpretation__description">
 				Entender o resultado do IMC é essencial para saber se você está abaixo do peso, com peso saudável, sobrepeso ou obesidade. Embora o IMC não meça diretamente a gordura corporal, ele é um bom ponto de partida para avaliação.
@@ -121,39 +87,32 @@
 					<thead>
 						<tr class="interpretation__table-row interpretation__table-row--header">
 							<th class="interpretation__table-header">Faixa de IMC</th>
-							<th class="interpretation__table-header">Classificação (Homem)</th>
-							<th class="interpretation__table-header">Classificação (Mulher)</th>
+							<th class="interpretation__table-header">Classificação</th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr class="interpretation__table-row interpretation__table-row--level-low">
 							<td class="interpretation__table-cell">Abaixo de 18,5</td>
 							<td class="interpretation__table-cell">Abaixo do peso</td>
-							<td class="interpretation__table-cell">Abaixo do peso</td>
 						</tr>
 						<tr class="interpretation__table-row interpretation__table-row--level-healthy">
 							<td class="interpretation__table-cell">18,5 – 24,9</td>
-							<td class="interpretation__table-cell">Peso saudável</td>
 							<td class="interpretation__table-cell">Peso saudável</td>
 						</tr>
 						<tr class="interpretation__table-row interpretation__table-row--level-warning">
 							<td class="interpretation__table-cell">25 – 29,9</td>
 							<td class="interpretation__table-cell">Sobrepeso</td>
-							<td class="interpretation__table-cell">Sobrepeso</td>
 						</tr>
 						<tr class="interpretation__table-row interpretation__table-row--level-danger">
 							<td class="interpretation__table-cell">30 – 34,9</td>
-							<td class="interpretation__table-cell">Obesidade grau I</td>
 							<td class="interpretation__table-cell">Obesidade grau I</td>
 						</tr>
 						<tr class="interpretation__table-row interpretation__table-row--level-danger">
 							<td class="interpretation__table-cell">35 – 39,9</td>
 							<td class="interpretation__table-cell">Obesidade grau II</td>
-							<td class="interpretation__table-cell">Obesidade grau II</td>
 						</tr>
 						<tr class="interpretation__table-row interpretation__table-row--level-danger">
 							<td class="interpretation__table-cell">40 ou mais</td>
-							<td class="interpretation__table-cell">Obesidade grau III</td>
 							<td class="interpretation__table-cell">Obesidade grau III</td>
 						</tr>
 					</tbody>
