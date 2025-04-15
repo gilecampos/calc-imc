@@ -1,132 +1,124 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora IMC</title>
-    <link rel="stylesheet" href="assets/css/class-imc.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/media.css">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="src/css/style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+
+	<style>
+		
+	</style>
+
+	<title>WealthSystem</title>
 </head>
+
 <body>
-    <main>
-        <!-- SOBRE O IMC -->
-        <div class="imc-desc">
-            <hr><h2>IMC</h2><hr>
-            <h1>Cálculo IMC</h1>
-            <p>
-                <strong>IMC</strong> é a sigla para Índice de <strong>Massa Corpórea</strong>,  parâmetro adotado pela Organização Mundial de Saúde para calcular o peso ideal de cada pessoa.
-            </p>
+	<header class="header">
+		<img src="src/img/logo.svg" alt="Logo da marca WealthSystem" class="header__logo">
+	</header>
 
-            <p>
-                O índice é calculado da seguinte maneira: divide-se o peso do paciente pela sua altura elevada ao quadrado. Diz-se que o indivíduo tem peso normal quando o resultado do <strong>IMC</strong> está entre 18,5 e 24,9.
-            </p>
+	<main class="main-content">
+		<section class="about container">
+			<h1 class="title">Calculadora de IMC (e peso ideal)</h1>
 
-            <p>
-                Quer descobrir seu <strong>IMC</strong>? Insira seu peso e sua altura nos campos abaixo e compare com os índices da tabela. <strong>Importante</strong>: siga os exemplos e use pontos como separadores.
-            </p>
+			<p class="about__text">A classificação do índice de massa corporal (IMC) pode ajudar a identificar problemas de obesidade ou desnutrição, em crianças, adolescentes, adultos e idosos.</p>
+			<p class="about__text">Além de calcular o valor de IMC, esta calculadora também indica qual o intervalo de peso ideal que deve ter para garantir uma melhor qualidade de vida. Ter um peso dentro do intervalo de peso ideal ajuda ainda a evitar o aparecimento de várias doenças crônicas, como diabetes e hipertensão.</p>
+		</section>
 
-            <!-- FORM DADOS IMC -->
-            <form>
-                <div class="inputs">
-                    <label>
-                        <h2>Altura (ex: 1,80)</h2>
-                        <input
-                            type="number"
-                            name="height"
-                            id="height"
-                            data-js="height"
-                            placeholder="Metros"
-                            required>
-                    </label>
+		<section class="calculator container">
+			<h2 class="title">Preencha abaixo com seus dados para obter o seu IMC: </h2>
 
-                    <label>
-                        <h2>Peso (ex: 66,5)</h2>
-                        <input
-                            type="number"
-                            name="weight"
-                            id="weight"
-                            data-js="weight"
-                            placeholder="Quilos"
-                            required>
-                    </label>
-                </div>
-            
-                <div class="buttons">
-                    <button
-                        type="button"
-                        data-js="calculateBtn"
-                        class="calculateBtn">
-                        CALCULAR
-                    </button>
+			<div class="calculator__content">
+				<form action="#" class="calculator__form">
+					<fieldset class="calculator__fieldset">
+						<legend class="calculator__legend">Sexo</legend>
+						<div class="calculator__radio-group">
+							<label class="calculator__radio-label">
+								<input type="radio" name="gender" value="male" class="calculator__radio" required>
+								Masculino ♂️
+							</label>
+						
+							<label class="calculator__radio-label">
+								<input type="radio" name="gender" value="female" class="calculator__radio" required>
+								Feminino ♀️
+							</label>
+						</div>
+					</fieldset>
 
-                    <button
-                        type="button"
-                        data-js="clean"
-                        class="clean">
-                        LIMPAR
-                    </button>
-                </div>
-            </form>
-        </div>
+					<div class="calculator__input-group">
+						<label for="age" class="calculator__label">Idade</label>
+						<input type="number" id="age" name="age" class="calculator__input" placeholder="Ex: 30" min="0" required>
+					</div>
 
-        <div class="container-classify">
-            <hr><h2>TABELA IMC</h2><hr>
-            <table>
-                <thead>
-                    <tr>
-                        <th>IMC</th>
-                        <th>CLASSIFICAÇÃO</th>
-                        <th>GRAU OBESIDADE</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="abaixo-peso">Abaixo de 18.5</td>
-                        <td class="abaixo-peso">Abaixo do Peso</td>
-                        <td class="abaixo-peso">0</td>
-                    </tr>
+					<div class="calculator__input-group">
+						<label for="weight" class="calculator__label">Peso (kg)</label>
+						<input type="number" id="weight" name="weight" class="calculator__input" placeholder="Ex: 70" step="0.1" min="0" required>
+					</div>
 
-                    <tr>
-                        <td class="normal">Entre 18,5 e 24,9</td>
-                        <td class="normal">Normal</td>
-                        <td class="normal">0</td>
-                    </tr>
+					<div class="calculator__input-group">
+						<label for="height" class="calculator__label">Altura (cm)</label>
+						<input type="number" id="height" name="height" class="calculator__input" placeholder="Ex: 170" min="0" required>
+					</div>
 
-                    <tr>
-                        <td class="acima-peso">Entre 25,0 e 29,9</td>
-                        <td class="acima-peso">Acima do peso</td>
-                        <td class="acima-peso">I</td>
-                    </tr>
+					<button type="submit" class="calculator__submit">Calcular IMC</button>
+				</form>
 
-                    <tr>
-                        <td class="obesidade">Entre 30,0 e 39,9</td>
-                        <td class="obesidade">Obesidade</td>
-                        <td class="obesidade">II</td>
-                    </tr>
+				<div class="calculator__feedback">
 
-                    <tr>
-                        <td class="obesidade-grave">Maior que 40,0</td>
-                        <td class="obesidade-grave" >Obesidade grave</td>
-                        <td class="obesidade-grave">III</td>
-                    </tr>
-                </tbody>
-            </table>
+				</div>
+			</div>
+		</section>
 
-            <h2>Seu IMC</h2><hr>
-            
-            <div class="container-result-imc" data-js="container-result-imc">
-                <!-- <div class="resultado-imc">
-                    <h1>25.0</h1>
-                    <p>Você está dentro do peso adequado</p>
-                </div>
-                 
-                <p><a href="">Clique para obter mais informações ou dicas</a></p> -->
-            </div>
-        </div>
-    </main>
-    <script src="https://kit.fontawesome.com/5b49dcbbc2.js" crossorigin="anonymous"></script>
-    <script src="function.js"></script>
+		<section class="interpretation container">
+			<h2 class="title">Como interpretar o resultado do seu IMC</h2>
+
+			<p class="interpretation__description">
+				Entender o resultado do IMC é essencial para saber se você está abaixo do peso, com peso saudável, sobrepeso ou obesidade. Embora o IMC não meça diretamente a gordura corporal, ele é um bom ponto de partida para avaliação.
+			</p>
+
+			<div class="interpretation__table-container">
+				<table class="interpretation__table">
+					<thead>
+						<tr class="interpretation__table-row interpretation__table-row--header">
+							<th class="interpretation__table-header">Faixa de IMC</th>
+							<th class="interpretation__table-header">Classificação</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="interpretation__table-row interpretation__table-row--level-low">
+							<td class="interpretation__table-cell">Abaixo de 18,5</td>
+							<td class="interpretation__table-cell">Abaixo do peso</td>
+						</tr>
+						<tr class="interpretation__table-row interpretation__table-row--level-healthy">
+							<td class="interpretation__table-cell">18,5 – 24,9</td>
+							<td class="interpretation__table-cell">Peso saudável</td>
+						</tr>
+						<tr class="interpretation__table-row interpretation__table-row--level-warning">
+							<td class="interpretation__table-cell">25 – 29,9</td>
+							<td class="interpretation__table-cell">Sobrepeso</td>
+						</tr>
+						<tr class="interpretation__table-row interpretation__table-row--level-danger">
+							<td class="interpretation__table-cell">30 – 34,9</td>
+							<td class="interpretation__table-cell">Obesidade grau I</td>
+						</tr>
+						<tr class="interpretation__table-row interpretation__table-row--level-danger">
+							<td class="interpretation__table-cell">35 – 39,9</td>
+							<td class="interpretation__table-cell">Obesidade grau II</td>
+						</tr>
+						<tr class="interpretation__table-row interpretation__table-row--level-danger">
+							<td class="interpretation__table-cell">40 ou mais</td>
+							<td class="interpretation__table-cell">Obesidade grau III</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</section>
+	</main>
 </body>
 </html>
