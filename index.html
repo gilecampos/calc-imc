@@ -9,19 +9,22 @@
 	<link rel="stylesheet" href="src/css/style.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
 
 	<title>Calculadora IMC</title>
 </head>
 
 <body>
 	<main class="main">
-		<h1>Calculadora de IMC</h1>
-		<p>Calcule seu Índice de Massa Corporal e receba dicas personalizadas para melhorar sua saúde</p>
+		<h1 class="main__title">Calculadora de IMC</h1>
+		<p class="main__description">Calcule seu Índice de Massa Corporal e receba dicas personalizadas para melhorar sua saúde</p>
 
 		<div class="calculator">
 			<div class="calculator__header">
-				<h2 class="calculator__title">Calculadora de IMC</h2>
+				<h2 class="calculator__title">
+					<img src="src/img/calculator.svg" alt="">
+					Calculadora de IMC
+				</h2>
 				<p class="calculator__text">Calcule seu Índice de Massa Corporal e receba dicas personalizadas</p>
 			</div>
 
@@ -50,10 +53,11 @@
 				</fieldset>
 
 				<div class="form-calculator__disclaimer">
+					<img src="src/img/info.svg" alt="">
 					<p class="form-calculator__disclaimer-text">O IMC é uma medida que avalia a relação entre peso e altura. É importante lembrar que o IMC é apenas um indicador e não leva em conta a composição corporal.</p>
 				</div>
 
-				<button type="submit">Calcular IMC</button>
+				<button type="submit" class="button button--large button--blue">Calcular IMC</button>
 			</form>
 		</div>
 	</main>
