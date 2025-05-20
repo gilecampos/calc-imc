@@ -5,120 +5,67 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Calcule seu IMC com nossa calculadora online e receba dicas personalizadas para melhorar sua saúde.">
 	<link rel="stylesheet" href="src/css/style.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
 
-
-	<style>
-		
-	</style>
-
-	<title>WealthSystem</title>
+	<title>Calculadora IMC</title>
 </head>
 
 <body>
-	<header class="header">
-		<img src="src/img/logo.svg" alt="Logo da marca WealthSystem" class="header__logo">
-	</header>
+	<main class="main">
+		<h1 class="main__title">Calculadora de IMC</h1>
+		<p class="main__description">Calcule seu Índice de Massa Corporal e receba dicas personalizadas para melhorar sua saúde</p>
 
-	<main class="main-content">
-		<section class="about container">
-			<h1 class="title">Calculadora de IMC (e peso ideal)</h1>
+		<div class="calculator">
+			<div class="calculator__header">
+				<h2 class="calculator__title">
+					<img src="src/img/calculator.svg" alt="">
+					Calculadora de IMC
+				</h2>
+				<p class="calculator__text">Calcule seu Índice de Massa Corporal e receba dicas personalizadas</p>
+			</div>
 
-			<p class="about__text">A classificação do índice de massa corporal (IMC) pode ajudar a identificar problemas de obesidade ou desnutrição, em crianças, adolescentes, adultos e idosos.</p>
-			<p class="about__text">Além de calcular o valor de IMC, esta calculadora também indica qual o intervalo de peso ideal que deve ter para garantir uma melhor qualidade de vida. Ter um peso dentro do intervalo de peso ideal ajuda ainda a evitar o aparecimento de várias doenças crônicas, como diabetes e hipertensão.</p>
-		</section>
+			<form action="#" class="form-calculator">
+				<fieldset class="form-calculator__input-group">
+					<label for="gender">Gênero</label>
+					<select name="gender" id="gender" class="form-calculator__select">
+						<option value="masculino">Masculino</option>
+						<option value="feminino">Feminino</option>
+					</select>
+				</fieldset>
 
-		<section class="calculator container">
-			<h2 class="title">Preencha abaixo com seus dados para obter o seu IMC: </h2>
+				<fieldset class="form-calculator__input-group">
+					<label for="age">Idade</label>
+					<input type="number" name="age" id="age" class="form-calculator__input">
+				</fieldset>
 
-			<div class="calculator__content">
-				<form action="#" class="calculator__form">
-					<fieldset class="calculator__fieldset">
-						<legend class="calculator__legend">Sexo</legend>
-						<div class="calculator__radio-group">
-							<label class="calculator__radio-label">
-								<input type="radio" name="gender" value="male" class="calculator__radio" required>
-								Masculino ♂️
-							</label>
-						
-							<label class="calculator__radio-label">
-								<input type="radio" name="gender" value="female" class="calculator__radio" required>
-								Feminino ♀️
-							</label>
-						</div>
-					</fieldset>
+				<fieldset class="form-calculator__input-group">
+					<label for="weight">Peso</label>
+					<input type="number" name="weight" id="weight" class="form-calculator__input">
+				</fieldset>
 
-					<div class="calculator__input-group">
-						<label for="age" class="calculator__label">Idade</label>
-						<input type="number" id="age" name="age" class="calculator__input" placeholder="Ex: 30" min="0" required>
-					</div>
+				<fieldset class="form-calculator__input-group">
+					<label for="height">Altura</label>
+					<input type="number" name="height" id="height" class="form-calculator__input">
+				</fieldset>
 
-					<div class="calculator__input-group">
-						<label for="weight" class="calculator__label">Peso (kg)</label>
-						<input type="number" id="weight" name="weight" class="calculator__input" placeholder="Ex: 70" step="0.1" min="0" required>
-					</div>
-
-					<div class="calculator__input-group">
-						<label for="height" class="calculator__label">Altura (cm)</label>
-						<input type="number" id="height" name="height" class="calculator__input" placeholder="Ex: 170" min="0" required>
-					</div>
-
-					<button type="submit" class="calculator__submit">Calcular IMC</button>
-				</form>
-
-				<div class="calculator__feedback">
-
+				<div class="form-calculator__disclaimer">
+					<img src="src/img/info.svg" alt="">
+					<p class="form-calculator__disclaimer-text">O IMC é uma medida que avalia a relação entre peso e altura. É importante lembrar que o IMC é apenas um indicador e não leva em conta a composição corporal.</p>
 				</div>
-			</div>
-		</section>
 
-		<section class="interpretation container">
-			<h2 class="title">Como interpretar o resultado do seu IMC</h2>
-
-			<p class="interpretation__description">
-				Entender o resultado do IMC é essencial para saber se você está abaixo do peso, com peso saudável, sobrepeso ou obesidade. Embora o IMC não meça diretamente a gordura corporal, ele é um bom ponto de partida para avaliação.
-			</p>
-
-			<div class="interpretation__table-container">
-				<table class="interpretation__table">
-					<thead>
-						<tr class="interpretation__table-row interpretation__table-row--header">
-							<th class="interpretation__table-header">Faixa de IMC</th>
-							<th class="interpretation__table-header">Classificação</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr class="interpretation__table-row interpretation__table-row--level-low">
-							<td class="interpretation__table-cell">Abaixo de 18,5</td>
-							<td class="interpretation__table-cell">Abaixo do peso</td>
-						</tr>
-						<tr class="interpretation__table-row interpretation__table-row--level-healthy">
-							<td class="interpretation__table-cell">18,5 – 24,9</td>
-							<td class="interpretation__table-cell">Peso saudável</td>
-						</tr>
-						<tr class="interpretation__table-row interpretation__table-row--level-warning">
-							<td class="interpretation__table-cell">25 – 29,9</td>
-							<td class="interpretation__table-cell">Sobrepeso</td>
-						</tr>
-						<tr class="interpretation__table-row interpretation__table-row--level-danger">
-							<td class="interpretation__table-cell">30 – 34,9</td>
-							<td class="interpretation__table-cell">Obesidade grau I</td>
-						</tr>
-						<tr class="interpretation__table-row interpretation__table-row--level-danger">
-							<td class="interpretation__table-cell">35 – 39,9</td>
-							<td class="interpretation__table-cell">Obesidade grau II</td>
-						</tr>
-						<tr class="interpretation__table-row interpretation__table-row--level-danger">
-							<td class="interpretation__table-cell">40 ou mais</td>
-							<td class="interpretation__table-cell">Obesidade grau III</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-		</section>
+				<button type="submit" class="button button--large button--blue">Calcular IMC</button>
+			</form>
+		</div>
 	</main>
+
+	<footer class="footer">
+		<h3 class="footer__title">© 2025 Calculadora IMC com IA</h3>
+		<p class="footer__text">As dicas fornecidas são apenas sugestões gerais. Consulte sempre um profissional de saúde.</p>
+	</footer>
 </body>
+
 </html>
